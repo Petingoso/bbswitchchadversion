@@ -267,7 +267,7 @@ static void bbswitch_off(void) {
         struct acpi_device *ad = NULL;
         int r;
 
-        r = acpi_bus_get_device(dis_handle, &ad);
+        r = acpi_fetch_acpi_dev(dis_handle, &ad);
         if (r || !ad) {
             pr_warn("Cannot get ACPI device for PCI device\n");
             break;
